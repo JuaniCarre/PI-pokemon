@@ -31,9 +31,10 @@ async function getAPIPokemons(){
     }
 }
 
-async function getApiDetail(id){
-    try{
-        let response = await axios.get(`https://pokeapi.co/api/v2/pokemon/` + id)
+async function getApiDetail(idOrName){
+    try{//si encuentra pokemon
+        let response = await axios.get(`https://pokeapi.co/api/v2/pokemon/` + idOrName)
+        
         let tipos = response.data.types.map(e=>e.type.name)
         let foundPokemon = {
                 name:response.data.name,
@@ -49,11 +50,25 @@ async function getApiDetail(id){
         }
         return foundPokemon
     }
-    catch(error){
-        console.log(error)
+    catch(error){// si no encuentra pokemon
+        return false
     }
 }
 
+async function getAllTypes(){
+    try {
+        const allTypes = await axios.get("https://pokeapi.co/api/v2/type/");
+        const nameTypesApi = allTypes.data.results.map((t) => t.name);
 
+        for (tp of nameTypesApi) {
+            await Type.findOrCreate({ where: { name: tp } });
+        }
 
-module.exports = {getAPIPokemons, getApiDetail}
+        const allTypesdb = await Type.findAll();
+        return allTypesdb;
+        } catch (error) {
+        console.log(error.message);
+        }
+}
+
+module.exports = {getAPIPokemons, getApiDetail, getAllTypes}

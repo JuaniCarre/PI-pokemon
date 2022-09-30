@@ -1,3 +1,4 @@
+const e = require('express')
 const {Pokemon, Type} = require('../db')
 
 async function getDbPokemons(){
@@ -48,9 +49,33 @@ async function getDetailDB(id){
     return(wholePoke)
 }
 
+async function searchByNameDB(name){
+    try{
+        let request = await Pokemon.findAll({where: {name:name}, include: Type})
+        let pokeFound = request[0].dataValues
+        let filteredTypes = pokeFound.types.map(e=>e.dataValues.name)
+    
+        let wholePoke = {
+            name: pokeFound.name,
+            id: pokeFound.id,
+            image: pokeFound.image,
+            hp: pokeFound.hp,
+            attack: pokeFound.attack,
+            defense: pokeFound.defense,
+            speed:pokeFound.speed,
+            height: pokeFound.height,
+            weight: pokeFound.weight,
+            types: filteredTypes
+        }
+        return (wholePoke)
+    
+    } catch(error){
+        return false
+    }
+}
 
 
-module.exports = {getDbPokemons, getDetailDB}
+module.exports = {getDbPokemons, getDetailDB, searchByNameDB}
 
 // {
 //     name: pokemons.name,

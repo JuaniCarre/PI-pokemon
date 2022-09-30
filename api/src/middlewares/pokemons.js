@@ -1,12 +1,11 @@
 const { Pokemon, Type } = require('../db');
-const { getAllPokemons, getDetailPokemon } = require('../queries/queries')
+const { getAllPokemons, getDetailPokemon, getByName, getTypes } = require('../queries/queries')
 
 const postPokemonMiddleware = async (req, res, next) => {
-    const { name, id, image, hp, attack, defense, speed, height, weight, types } = req.body; 
+    const { name, image, hp, attack, defense, speed, height, weight, types } = req.body; 
     try {
         const newPokemon = await Pokemon.create({
             name,
-            id,
             image,
             hp,
             attack,
@@ -50,5 +49,30 @@ const getDetailMiddleware = async (req, res, next) => {
     }
 }
 
+const getByNameMiddleware = async(req, res, next) => {
+    const {name} = req.query
+    try{
+        console.log(name)
+        let foundPokemon = await getByName(name)
+        res.send(foundPokemon)
+    }
+    catch(error){
+        next(error)
+    }
+}
 
-module.exports = {postPokemonMiddleware, getPokemonsMiddleware, getDetailMiddleware}
+const getAllTypesDb = async (req, res, next) => {
+    try {
+        const allTypesdb = await getTypes();
+        res.json(allTypesdb);
+        } catch (error) {
+        next(error);
+        }
+    };
+
+module.exports = 
+    {postPokemonMiddleware, 
+    getPokemonsMiddleware, 
+    getDetailMiddleware, 
+    getByNameMiddleware, 
+    getAllTypesDb}
