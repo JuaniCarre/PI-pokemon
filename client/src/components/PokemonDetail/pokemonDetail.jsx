@@ -14,7 +14,7 @@ export default function PokemonDetail(){
     }, [dispatch, id])
     let res = useSelector((state) => state.pokemonDetail)
     return <div>
-        <img src={res.image}></img>
+        <img src={res.image} alt="este es un pokemon"></img>
         <h2>{res.name}</h2>
         <p>{res.id}</p>
         <h4>{res.hp}</h4>

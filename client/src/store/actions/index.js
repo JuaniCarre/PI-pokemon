@@ -3,6 +3,7 @@ export const FETCH_POKEMONS = 'FETCH_POKEMONS';//
 export const FETCH_TYPES = 'FETCH_TYPES'
 export const DETAIL_POKEMON = 'DETAIL_POKEMON'
 export const CLEAR = 'CLEAR'
+export const POST_POKEMON = 'POST_POKEMON'
 
 export function fetchPokemons(){
     return function(dispatch){
@@ -39,6 +40,18 @@ export function getPokemonById(id){
             })
         })
         .catch(error => console.log(error))
+    }
+}
+
+export function postPokemon(input){
+    return function(dispatch){
+        axios.post('http://localhost:3001/pokemon/', input)
+        .then(pokemon =>{
+            dispatch({
+                type: POST_POKEMON,
+            })
+        })
+        .catch( error=> console.log(error))
     }
 }
 

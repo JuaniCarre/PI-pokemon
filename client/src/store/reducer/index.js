@@ -1,4 +1,4 @@
-import { FETCH_POKEMONS, FETCH_TYPES, DETAIL_POKEMON, CLEAR } from "../actions";
+import { FETCH_POKEMONS, FETCH_TYPES, DETAIL_POKEMON, CLEAR, POST_POKEMON } from "../actions";
 
 const initialState = {
     pokemons:[],
@@ -34,6 +34,8 @@ export default function reducer(state=initialState, action) {
                 pokemonDetail:{}
         }
 
+        case POST_POKEMON:
+            return{...state}
 
         default:
             return state

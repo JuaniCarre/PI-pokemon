@@ -8,11 +8,11 @@ export default function Pokemons(){
     let dispatch = useDispatch()
 
     useEffect(()=>
-    dispatch(fetchPokemons()), [dispatch])
+    dispatch(fetchPokemons()), [])
+    console.log(pokemons)
 
     return <div className='PokemonsContainer'>
-        {pokemons.map(pokemon => {
-            return <Pokemon name={pokemon.name} image={pokemon.image} types={pokemon.types} attack={pokemon.attack} id={pokemon.id}></Pokemon>
-        })}
+        {(pokemons.length>0? pokemons.map(pokemon => <Pokemon name={pokemon.name} image={pokemon.image} types={pokemon.types} attack={pokemon.attack} id={pokemon.id}></Pokemon>
+        ):<p>cargando pokemons</p>)}
     </div>
 }
