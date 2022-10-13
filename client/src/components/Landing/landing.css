@@ -1,0 +1,37 @@
+.landingContainer{
+    background-image: url('../../Images/landing.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    width:100vw;
+    height:100vh;
+    display: flex;
+}
+
+.startingButton{
+    font-size: xx-large;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+.buttonContainer{
+    position: absolute;
+    left: 100px;
+    top: 350px;
+    height: 70px;
+    width: 200px;
+    display: flex;
+    background-color: blue;
+    border: 5px;
+    border-color: aqua;
+    border-radius: 15px;
+}
+
+.pokepedia{
+    border-radius: 3px;
+    font-family: 'Radio Canada', sans-serif;
+    font-size: 500%;
+    padding-top: 10px;
+    position: absolute;
+    padding-left: 33%;
+}

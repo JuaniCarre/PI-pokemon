@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchTypes, postPokemon } from '../../store/actions';
 import validation from './validation';
+import './addPokemon.css'
+
 
 export default function AddPokemon(){
 
@@ -27,7 +29,16 @@ let dispatch = useDispatch()
 useEffect(()=>{dispatch(fetchTypes())}, [dispatch])
 let tipos = useSelector((state)=> state.types)
 
-
+let clearTypes = ()=> {
+    setPokeCreation((prevState) => {
+        let newState={
+            ...prevState,
+            types:[]
+        }
+        setError(validation(newState));
+        return newState
+    })
+}
 
 let handleChange = (e) => {
     setPokeCreation((prevState) => {
@@ -64,82 +75,88 @@ const onSubmit=(e)=>{
     }
 }
 
-// const onSubmit=(e)=>{
-//     if(error.name || error.hp|| error.attack||error.image||error.defense||error.height||error.weight||error.speed||error.types[0]){
-//         console.log("entre al primero")
-//         e.preventDefault()
-//         alert("All fields must be completed.")
-//     } else {
-//         e.preventDefault()
-//         console.log("entre al segundo")
-//         dispatch(postPokemon(pokeCreation))
-//         alert('Pokemon created succesfully, you can se him at My Pokemons section!')
-//     }
-//     e.preventDefault()
-//     console.log("me la chupa tu if")
-// }
 
 
-return(<div>
-<form onSubmit={onSubmit} id="form" className="form">
-<label htmlFor="">Name:</label>
-<input onChange={handleChange} name="name" type="text" value={pokeCreation.name} autoComplete="off" autoFocus={true}/>
-<p>{error.name? `${error.name}` : ''}</p>
-
-<label htmlFor="">Hp:</label>
-<input onChange={handleChange} name="hp" type="text" value={pokeCreation.hp} autoComplete="off"/>
-<p>{error.hp? `${error.hp}` : ''}</p>
-
-<label htmlFor="">Attack:</label>
-<input onChange={handleChange} name="attack" type="text" value={pokeCreation.attack} autoComplete="off"/>
-<p>{error.attack? `${error.attack}` : ''}</p>
-
-<label htmlFor="">Defense:</label>
-<input onChange={handleChange} name="defense" type="text" value={pokeCreation.defense} autoComplete="off"/>
-<p>{error.defense? `${error.defense}` : ''}</p>
-
-<label htmlFor="">Speed:</label>
-<input onChange={handleChange} name="speed" type="text" value={pokeCreation.speed} autoComplete="off"/>
-<p>{error.speed? `${error.speed}` : ''}</p>
-
-<label htmlFor="">Height:</label>
-<input onChange={handleChange} name="height" type="text" value={pokeCreation.height} autoComplete="off"/>
-<p>{error.height? `${error.height}` : ''}</p>
-
-<label htmlFor="">Weight:</label>
-<input onChange={handleChange} name="weight" type="text" value={pokeCreation.weight} autoComplete="off"/>
-<p>{error.weight? `${error.weight}` : ''}</p>
-
-<label htmlFor=''>Image:</label>
-<input onChange={handleChange} name="image" type="text" value={pokeCreation.image}/>
-<p>{error.image? `${error.image}` : ''}</p>
-
-<label htmlFor="">Select types:</label>
-<select
-            onChange={handleTypesChange}
-            name="types"
-            value={pokeCreation.types}
-            className="formInput">
-            <option multiple={true}>Select</option>
-            {tipos?.map((e)=><option key={e.id}>
-                {e.name}
-            </option>)}
-        </select>
-<p>{error.types? <p>`{error.types}`</p> : <p>{pokeCreation.types.toString().replace(/,/g, ", ")}</p>}</p>
+return(
+<div className='formContainer'>
+    <div className='formbox'>
+        <h2 className='Create'>Create your pokemon!</h2>
+        <form onSubmit={onSubmit} id="form" className="form">
+            <div className='namecontainer'>
+                <label htmlFor="">Name:</label>
+                <input className='inputName' onChange={handleChange} name="name" type="text" value={pokeCreation.name} autoComplete="off" autoFocus={true}/>
+                <p className='error'>{error.name? `${error.name}` : ''}</p>
+            </div>
+            <div className='characteristicsGrid'>
+            <div className='inputcontainer'>
+                <label htmlFor="">Hp:</label>
+                <input onChange={handleChange} name="hp" type="text" value={pokeCreation.hp} autoComplete="off"/>
+                <p className='error'>{error.hp? `${error.hp}` : ''}</p>
+            </div>
 
 
-<input type="submit" value="Create!"/>
+            <div className='inputcontainer'>
+                <label htmlFor="">Attack:</label>
+                <input onChange={handleChange} name="attack" type="text" value={pokeCreation.attack} autoComplete="off"/>
+                <p className='error'>{error.attack? `${error.attack}` : ''}</p>
+            </div>
 
-</form>
+            <div className='inputcontainer'>
+                <label htmlFor="">Defense:</label>
+                <input onChange={handleChange} name="defense" type="text" value={pokeCreation.defense} autoComplete="off"/>
+                <p className='error'>{error.defense? `${error.defense}` : ''}</p>
+            </div>
+
+
+            <div className='inputcontainer'>
+                <label htmlFor="">Speed:</label>
+                <input onChange={handleChange} name="speed" type="text" value={pokeCreation.speed} autoComplete="off"/>
+                <p className='error'>{error.speed? `${error.speed}` : ''}</p>
+            </div>
+
+            <div className='inputcontainer'>
+                <label htmlFor="">Height:</label>
+                <input onChange={handleChange} name="height" type="text" value={pokeCreation.height} autoComplete="off"/>
+                <p className='error'>{error.height? `${error.height}` : ''}</p>
+            </div>
+
+            <div className='inputcontainer'>
+                <label htmlFor="">Weight:</label>
+                <input onChange={handleChange} name="weight" type="text" value={pokeCreation.weight} autoComplete="off"/>
+                <p className='error'>{error.weight? `${error.weight}` : ''}</p>
+            </div>
+
+
+            <div className='inputcontainer'>
+                <label htmlFor=''>Image:</label>
+                <input onChange={handleChange} name="image" type="text" value={pokeCreation.image}/>
+                <p className='error'>{error.image? `${error.image}` : ''}</p>
+            </div>
+
+
+            <div className='inputcontainer'>
+                <label htmlFor="">Select types:</label>
+                <select
+                            onChange={handleTypesChange}
+                            name="types"
+                            value={pokeCreation.types}
+                            className="formInput"
+                            >
+                            <option >Select</option>
+                            {tipos?.map((e)=><option key={e.id}>
+                                {e.name}
+                            </option>)}
+                        </select>
+                <p className='error'>{error.types? <p className='error'>`{error.types}`</p> : <h4 className='Types'>{pokeCreation.types.toString().replace(/,/g, ", ")}</h4>}</p>
+            </div>
+            </div>
+
+
+            <div className='inputbutton'>
+                <input type="button" value="Clear types" onClick={clearTypes}/>
+                <input type="submit" value="Create!"/>
+            </div>
+
+        </form>
+    </div>
 </div>)}
-
-{/* <select ANDABA 
-            onChange={(e)=>setPokeCreation({...pokeCreation, types:[...pokeCreation.types, e.target.value]})}
-            name="types"
-            value={pokeCreation.types}
-            className="formInput">
-            <option multiple={true}>Select</option>
-            {tipos?.map((e)=><option key={e.id}>
-                {e.name}
-            </option>)}
-        </select> */}

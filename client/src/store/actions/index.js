@@ -1,9 +1,14 @@
 import axios from 'axios';
-export const FETCH_POKEMONS = 'FETCH_POKEMONS';//
+export const FETCH_POKEMONS = 'FETCH_POKEMONS';
 export const FETCH_TYPES = 'FETCH_TYPES'
 export const DETAIL_POKEMON = 'DETAIL_POKEMON'
 export const CLEAR = 'CLEAR'
 export const POST_POKEMON = 'POST_POKEMON'
+export const SORTATTACK = 'SORTATTACK'
+export const SORTNAME = 'SORTNAME'
+export const FILTERORIGIN = 'FILTER_ORIGIN'
+export const FILTERTYPES = 'FILTER_TYPES'
+export const SEARCHNAME= 'SEARCH_NAME'
 
 export function fetchPokemons(){
     return function(dispatch){
@@ -55,8 +60,50 @@ export function postPokemon(input){
     }
 }
 
+export function searchPokemonByName(name){ 
+    return function (dispatch){
+        axios.get('http://localhost:3001/pokemon/pokemons?name='+name)
+        .then(pokemon => {
+            dispatch({
+                type: SEARCHNAME,
+                payload: pokemon.data
+            })
+        })
+    }
+}
+
+
 export function clearDetail(){
     return{
         type:CLEAR
+    }
+}
+
+export function sortAttack(order){
+    return {
+        type: SORTATTACK,
+        payload:order
+    }
+}
+
+export function sortName(order){
+    return{
+        type: SORTNAME,
+        payload: order
+    }
+}
+
+export function filterOrigin(origin){
+    return{
+        type: FILTERORIGIN,
+        payload: origin
+    }
+}
+
+export function filtertypes(type, origin){
+    return{
+        type:FILTERTYPES,
+        payload:type,
+        data:origin
     }
 }

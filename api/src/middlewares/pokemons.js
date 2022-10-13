@@ -57,7 +57,7 @@ const getByNameMiddleware = async(req, res, next) => {
         res.send(foundPokemon)
     }
     catch(error){
-        next(error)
+        res.status(404).send("Pokemon not found")
     }
 }
 

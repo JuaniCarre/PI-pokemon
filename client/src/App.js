@@ -9,7 +9,6 @@ import AddPokemon from './components/AddPokemon/addPokemon'
 function App() {
   return (
     <div className="App">
-      <h1>Henry Pokemon</h1>
 
       <Switch>
         <Route path="/home/:id">
@@ -24,6 +23,7 @@ function App() {
           <Pokemons/>
         </Route>
       </Switch>
+
 
       <Switch>
         <Route path="/create">

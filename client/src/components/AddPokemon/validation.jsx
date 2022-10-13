@@ -1,15 +1,20 @@
+
+
+
 export default function validation(state){
-const errors = {};
+    const errors = {};
+
+
 
 if(!state.name){
     errors.name= 'Name is required.';
 }else if(!/^[a-zA-Z]+$/.test(state.name)){
     errors.name= 'Name must contain only letters.'
-};
+}
 
 if(!state.image){
     errors.image= 'Image is required.';
-}else if(!/^(?:([^:/?#]+):)?(?:([^/?#]*))?([^?#]*\.(?:jpg|gif|png||webp))(?:\?([^#]*))?(?:#(.*))?$/gm.test(state.image)){
+}else if(!/^(?:([^:/?#]+):)?(?:([^/?#]*))?([^?#]*\.(?:jpg|gif|png|webp))(?:\?([^#]*))?(?:#(.*))?$/gm.test(state.image)){
     errors.image= 'Image is invalid: it has to be the URL of an image.';
 };
 

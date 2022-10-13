@@ -1,0 +1,105 @@
+.formContainer{
+    display: block;
+    min-height: 85vh;
+    background-image: url('../../Images/form.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.formbox{
+    display: inline-block;
+    background-color: rgba(146,186,146, 0.8);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 80px;
+    border-radius: 30px;
+    border: 3px;
+    border-color: black;
+    min-height: 50vh;
+    width: 800px;
+}
+
+.Create{
+    color: wheat;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.namecontainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 23px;
+    height: 130px;
+}
+
+
+.inputName{
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: azure;
+}
+
+.error{
+    font-size: 15px;
+    color: red !important;
+}
+
+.characteristicsGrid{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    font-size: 23px;
+}
+
+.characteristicsGrid div{
+    display: flex;
+    align-items: center;
+    width: 390px;
+    height: 130px;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.characteristicsGrid input{
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: azure;
+}
+
+.inputbutton input{
+    width: 130px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: rgb(86, 119, 86);
+    color: wheat;
+    font-size: 16px;
+}
+
+.inputbutton{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.characteristicsGrid select{
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: azure;
+
+}
+
+
+h4{
+    color: black;
+    text-shadow: 1px 1px 1px rgba(34, 34, 34, 0.349);
+}
+
+p{
+    color:red;
+    font-weight: 500;
+}

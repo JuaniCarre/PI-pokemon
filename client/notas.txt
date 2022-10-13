@@ -1,0 +1,10 @@
+Filtro types se desactiva cuando filtro por origen y no vuelve a todos con el all
+filtro origin funciona.
+ordenamientos funcionan.
+
+importar fuente=> descargar, descomprimir, meter en la carpeta
+en el archivo .css =>  @font-face{
+    src: url(/lugardondeestelaimagen);
+    font-family: nombrequequierausar
+
+    first/last page

@@ -1,0 +1,30 @@
+.detailcontainer{
+    background-image: url('../../Images/backgroundHome.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width:100vw;
+    height: auto;
+    min-height: 700px;
+}
+
+.cardcontainer{
+    background-color: rgba(53, 129, 32, 0.582);
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    padding-bottom: 30px;
+    border-radius: 30px;
+    align-items: center;
+}
+
+.infocontainer{
+    display: inline-block;
+    margin-right: 80px;
+}
+
+img {
+    display: inline-block;
+    margin-right: 100px;
+}
+
