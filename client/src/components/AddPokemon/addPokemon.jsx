@@ -153,8 +153,8 @@ return(
 
 
             <div className='inputbutton'>
-                <input type="button" value="Clear types" onClick={clearTypes}/>
                 <input type="submit" value="Create!"/>
+                <input type="button" value="Clear types" onClick={clearTypes}/>
             </div>
 
         </form>

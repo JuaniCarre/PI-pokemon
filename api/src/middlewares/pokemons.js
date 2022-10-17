@@ -1,5 +1,5 @@
 const { Pokemon, Type } = require('../db');
-const { getAllPokemons, getDetailPokemon, getByName, getTypes } = require('../queries/queries')
+const { getAllPokemons, getDetailPokemon, getByName, getTypes, orderByHP } = require('../queries/queries')
 
 const postPokemonMiddleware = async (req, res, next) => {
     const { name, image, hp, attack, defense, speed, height, weight, types } = req.body; 
@@ -38,6 +38,7 @@ const getPokemonsMiddleware = async (req, res, next) => {
     }
 }
 
+
 const getDetailMiddleware = async (req, res, next) => {
     const {id} = req.params
     try{
@@ -75,4 +76,5 @@ module.exports =
     getPokemonsMiddleware, 
     getDetailMiddleware, 
     getByNameMiddleware, 
-    getAllTypesDb}
+    getAllTypesDb,
+    orderedbyHPMiddleware}

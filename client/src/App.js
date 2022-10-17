@@ -18,6 +18,13 @@ function App() {
       </Switch>
 
       <Switch>
+        <Route exact path='/home/hp'>
+          <NavBar/>
+          <Pokemons/>
+        </Route>
+      </Switch>
+
+      <Switch>
         <Route exact path="/home">
           <NavBar/>
           <Pokemons/>

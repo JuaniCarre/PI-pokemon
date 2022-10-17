@@ -12,7 +12,7 @@ export const SEARCHNAME= 'SEARCH_NAME'
 
 export function fetchPokemons(){
     return function(dispatch){
-        axios.get('http://localhost:3001/pokemon/')
+        axios.get('http://localhost:3001/pokemon')
         .then((pokemons)=>{
             dispatch({
                 type: FETCH_POKEMONS,

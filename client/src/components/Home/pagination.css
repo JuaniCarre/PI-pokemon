@@ -7,9 +7,9 @@
     justify-content: space-around;
     color: rgb(18, 178, 206);
     font-size: 32px;
-    margin-bottom: 30px;
-
-
+    margin-bottom: 0px;
+    padding-bottom: 30px;
+    padding-top: 20px;
 }
 
 .pagination a{

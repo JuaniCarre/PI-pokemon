@@ -12,6 +12,7 @@ router.get('/', cache('2 minutes'), getPokemonsMiddleware)
 
 router.get('/types', getAllTypesDb)
 
+
 router.post('/', postPokemonMiddleware)
 
 module.exports = router;

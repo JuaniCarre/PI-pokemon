@@ -13,11 +13,13 @@ export default function Pokemons(){
     const [state, setState]= useState()
     const [origin, setOrigin] = useState()
     const [search, setSearch]= useState('')
+
     const cards= 12
     const [currentPage, setCurrentPage] = useState(1);
     const cardsPerPage = currentPage * cards
     const firstShown = cardsPerPage - cards
     const allShown = pokemons.slice(firstShown, cardsPerPage)
+    
     useEffect(()=> dispatch(fetchTypes()), [dispatch])
     useEffect(()=> dispatch(fetchPokemons()), [dispatch])
 
@@ -34,7 +36,7 @@ export default function Pokemons(){
         if(e.target.value === AZ || e.target.value === ZA){
             dispatch(sortName(e.target.value))
         }
-        if(e.target.value === DB || e.target.value === API){
+        if((e.target.value === DB || e.target.value === API)||e.target.value === ALL){
             setOrigin(e.target.value)
             dispatch(filterOrigin(e.target.value))
         }

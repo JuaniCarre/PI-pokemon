@@ -12,6 +12,9 @@
     font-size: xx-large;
     margin: auto;
     padding-bottom: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
 }
 
 .buttonContainer{
@@ -21,17 +24,15 @@
     height: 70px;
     width: 200px;
     display: flex;
-    background-color: blue;
-    border: 5px;
-    border-color: aqua;
+    background-color: rgb(219, 233, 29);
     border-radius: 15px;
 }
 
-.pokepedia{
-    border-radius: 3px;
-    font-family: 'Radio Canada', sans-serif;
-    font-size: 500%;
-    padding-top: 10px;
+.pokepedia{ 
+    height: 400px;
+    width: 1000px;
     position: absolute;
-    padding-left: 33%;
+    margin-left: 33%;
+    background-image: url('../../Images/landinglogo.png');
+    background-repeat: no-repeat;
 }

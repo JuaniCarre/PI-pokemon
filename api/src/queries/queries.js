@@ -16,6 +16,7 @@ async function getAllPokemons(){
     }
 }
 
+
 async function getDetailPokemon(id){
 
     try{
@@ -54,4 +55,4 @@ async function getTypes(){
     }
 }
 
-module.exports = {getAllPokemons, getDetailPokemon, getByName, getTypes}
+module.exports = {getAllPokemons, getDetailPokemon, getByName, getTypes, orderByHP}
