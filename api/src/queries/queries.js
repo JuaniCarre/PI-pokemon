@@ -55,4 +55,4 @@ async function getTypes(){
     }
 }
 
-module.exports = {getAllPokemons, getDetailPokemon, getByName, getTypes, orderByHP}
+module.exports = {getAllPokemons, getDetailPokemon, getByName, getTypes}/*orderByHP*/

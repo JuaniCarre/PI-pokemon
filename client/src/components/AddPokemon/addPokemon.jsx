@@ -71,7 +71,7 @@ const onSubmit=(e)=>{
         alert('Please check the form, all the fields must be filled.')
     } else {
         dispatch(postPokemon(pokeCreation))
-        alert('Pokemon created succesfully, you can se him at My Pokemons section!')
+        alert('Pokemon created succesfully!')
     }
 }
 

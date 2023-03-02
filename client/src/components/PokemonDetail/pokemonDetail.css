@@ -5,14 +5,16 @@
     background-attachment: fixed;
     width:100vw;
     height: auto;
-    min-height: 700px;
+    min-height: 750px;
 }
 
 .cardcontainer{
-    background-color: rgba(53, 129, 32, 0.582);
+    background-color: rgba(117, 198, 155, 0.582);
     display: flex;
     width: fit-content;
     margin: auto;
+    margin-top: 50px;
+    padding-top: 20px;
     padding-bottom: 30px;
     border-radius: 30px;
     align-items: center;
@@ -21,6 +23,11 @@
 .infocontainer{
     display: inline-block;
     margin-right: 80px;
+}
+
+.PokeImage{
+    height: 512px;
+    width: 512px;
 }
 
 img {

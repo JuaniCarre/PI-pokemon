@@ -76,5 +76,6 @@ module.exports =
     getPokemonsMiddleware, 
     getDetailMiddleware, 
     getByNameMiddleware, 
-    getAllTypesDb,
-    orderedbyHPMiddleware}
+    getAllTypesDb
+    }
+    //orderedbyHPMiddleware

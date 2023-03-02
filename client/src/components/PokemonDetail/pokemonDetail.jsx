@@ -17,7 +17,7 @@ export default function PokemonDetail(){
     return (
     <div className="detailcontainer">
         <div className="cardcontainer">
-            <img src={res.image} alt="este es un pokemon"></img>
+            <img src={res.image} alt="este es un pokemon" className="PokeImage"></img>
             <div className="infocontainer">
             <h2>Name: {res.name}</h2>
             <p>ID: {res.id}</p>

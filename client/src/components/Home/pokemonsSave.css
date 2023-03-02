@@ -17,7 +17,6 @@
     color: black;
 }
 .controlPanel{
-    background-color: rgb(251, 233, 185);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,4 +81,3 @@
     color: wheat !important;
     font-size: 50px;
 }
-

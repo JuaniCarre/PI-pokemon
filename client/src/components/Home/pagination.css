@@ -13,7 +13,7 @@
 }
 
 .pagination a{
-    background-color: #314026;
+    background-color: rgb(235, 229, 182);
     width: 100px;
     height: 100%;
     border-radius: 10px;
@@ -30,16 +30,16 @@
 }
 .pagination a:hover {
     transform: translateY(-2px);
-    box-shadow: rgba(0, 0, 0, 0.05) 5px 5px 5px;
+    box-shadow: rgba(0, 0, 0, 0.3) 5px 5px 5px;
     transition: .2s;
 }
 
 .pagination-actual {
     background-color:rgb(208, 44, 44) ;
-    color: white
+    color: rgb(0, 0, 0)
     
 }
 .pagination-off {
     background-color: white;
-    color: rgb(120, 147, 138);
+    color: rgb(67, 67, 67);
 }
