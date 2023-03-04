@@ -1,4 +1,5 @@
-import axios from 'axios';
+
+import client from "../../axiosClient"
 export const FETCH_POKEMONS = 'FETCH_POKEMONS';
 export const FETCH_TYPES = 'FETCH_TYPES'
 export const DETAIL_POKEMON = 'DETAIL_POKEMON'
@@ -10,9 +11,10 @@ export const FILTERORIGIN = 'FILTER_ORIGIN'
 export const FILTERTYPES = 'FILTER_TYPES'
 export const SEARCHNAME= 'SEARCH_NAME'
 
+
 export function fetchPokemons(){
     return function(dispatch){
-        axios.get('http://localhost:3001/pokemon')
+        client.get('/')
         .then((pokemons)=>{
             dispatch({
                 type: FETCH_POKEMONS,
@@ -25,7 +27,7 @@ export function fetchPokemons(){
 
 export function fetchTypes(){
     return function(dispatch){
-        axios.get('http://localhost:3001/pokemon/types')
+        client.get('/types')
         .then((types) => 
         dispatch({
             type: FETCH_TYPES,
@@ -37,7 +39,7 @@ export function fetchTypes(){
 
 export function getPokemonById(id){
     return function(dispatch){
-        axios.get('http://localhost:3001/pokemon/pokemons/' + id)
+        client.get('/pokemons/' + id)
         .then(pokemon => {
             dispatch({
                 type: DETAIL_POKEMON,
@@ -50,7 +52,7 @@ export function getPokemonById(id){
 
 export function postPokemon(input){
     return function(dispatch){
-        axios.post('http://localhost:3001/pokemon/', input)
+        client.post('/', input)
         .then(pokemon =>{
             dispatch({
                 type: POST_POKEMON,
@@ -62,7 +64,7 @@ export function postPokemon(input){
 
 export function searchPokemonByName(name){ 
     return function (dispatch){
-        axios.get('http://localhost:3001/pokemon/pokemons?name='+name)
+        client.get('/pokemons?name='+name)
         .then(pokemon => {
             dispatch({
                 type: SEARCHNAME,
