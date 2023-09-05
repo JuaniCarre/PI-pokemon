@@ -20,28 +20,29 @@
     background-color: rgb(251, 233, 185);
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-around;
+    flex-direction: row;
 }
 .searchbox{
-    padding-left: 10px;
-    width: 20%;
-    height: 40px;
-    border-radius: 22px;
-    padding-top: 15px;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
     cursor: pointer;
     margin-right: 15px;
-    font-size: 26px;
+    font-size: 16px;
 }
 
-.searchbar{
+.searchForm{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
 .SearchName{
-
-    width: 100%;
+    width: 20%;
+    padding-left: 5%;
+    padding-right: 3%;
 }
 
 .textos{

@@ -19,7 +19,7 @@ async function getDbPokemons(){
             types: e.types.map(e=>e.name)
         }
         response.push(poke)})
-
+        console.log(response)
         return response
     }
     catch(error){

@@ -65,10 +65,10 @@ export default function Pokemons(){
     <div className='controlPanel'>
         <div className='SearchName'>
             <p className='textos'>Search by name</p>
-            <div className='searchBar'> {/*busqueda*/} 
-            <form onSubmit={onSearch}>
+            <div className='searchBar'> {/*busqueda*/}
+            <form onSubmit={onSearch} className='searchForm'>
                 <input className="searchbox" type="search" onChange={onSearchChange}/>
-                <input type="submit" />
+                <input type="submit" className='searchButton'/>
             </form>
             </div>
         </div>
